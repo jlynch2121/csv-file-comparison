@@ -17,10 +17,10 @@ dplaListFile = csv.reader(open('dplaTypeFilterList.csv'))
 # create an array for storing DPLA values
 dplaFilterList = []
 
-# store values from CSV to array    
+# store values from CSV to array
 for row in dplaListFile:
     dplaFilterList.append(row[0])
-    
+
 # check to see if IDHH type metadata value is in the DPLA array
 for row in idhhTypeData:
     field = row[0]
@@ -30,5 +30,5 @@ for row in idhhTypeData:
         writeThis = [[field, 'DPLA']]
         writer.writerows(writeThis)
     else:
-        writeThis = [[field, '']]
+        writeThis = [[field, 'IDHH']]
         writer.writerows(writeThis)
